@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_vtable">
+    <sys_script_vtable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <cache_isolation_level>USER</cache_isolation_level>
+        <cache_strategy>CACHE_BY_QUERY</cache_strategy>
+        <cache_ttl>0</cache_ttl>
+        <name>GitHub Commit</name>
+        <script><![CDATA[(function executeQuery(v_table, v_query) {
+    // Main API:
+    //    v_table.addRow({ ... }) - adds a row to the result set
+
+    // There are also query helper methods
+    //    v_query.getEncodedQuery() - returns encoded querystring
+    //    v_query.getCondition(field) - returns encoded querystring for the given field (includes field name, operator, and value)
+    //    v_query.getParameter(field) - returns parameter for the given field (only includes value for equality conditions)
+    //    v_query.isGet() - returns whether the query is a single get by sys_id
+    //    v_query.getSysId() - returns parameter for sys_id field
+    //    v_query.isTextSearch() - returns whether the query contains a text query parameter
+    //    v_query.getTextSearch() - returns text search query parameter (internal field name 123TEXTQUERY321)
+    //    v_query.getFirstRowWanted() - returns the first row to include
+    //    v_query.getLastRowWanted() - returns the last row to include
+
+    // Note: You must define sys_id for each row so that forms and lists for this table work properly
+
+    // Your code goes here
+    // v_table.addRow({...})
+
+    try {
+        var file_sys_id = "";
+        var actionName = "";
+        var inputs = {};
+        var outputs = {};
+        var status = "";
+        var error_message = "";
+        var records = [];
+
+        if (v_query.getParameter("sys_id") || v_query.getParameter("application_file")) {
+            file_sys_id = v_query.getParameter("sys_id") || v_query.getParameter("application_file");
+            actionName = "look_up_commits_for_a_file";
+
+            inputs['file_sys_id'] = file_sys_id;
+            outputs = sn_fd.FlowAPI.executeAction('sn_github_spoke.' + actionName, inputs);
+
+            status = outputs['status'];
+            error_message = outputs['error_message'];
+            records = JSON.parse(outputs['commits']);
+
+            if (status == "Error")
+                throw new Error(error_message);
+            else {
+                var record = {};
+				gs.info('DD: Got results, parsing: ' + JSON.stringify(records));
+              //  var allRecords = JSON.parse(records);
+                if (records.length > 0) {
+                    for (var key in records) {
+                        record = records[key];
+                        generateRecords(v_table, record);
+                    }
+                } else
+                    throw new Error("There are no Commits linked to the File ID: " + file_sys_id);
+            }
+
+        }
+    } catch (e) {
+        gs.addErrorMessage(gs.getMessage("An error occured while generating records for Git Commits table. Please contact System Administrator."));
+        gs.addErrorMessage(e.toString());
+    }
+
+    function generateRecords(v_table, record) {
+		gs.info('DD creating record: ' + JSON.stringify(record));
+		
+		// finde user for author of commit
+		var usr_email = record.commit.author.email;
+		var usr_sys_id = '';
+		var gr_user = new GlideRecord('sys_user');
+		gr_user.addQuery('email', usr_email);
+		gr_user.addActiveQuery();
+		gr_user.query();
+		if (gr_user.next()) {
+			usr_sys_id = gr_user.sys_id;
+		}
+		
+        v_table.addRow({
+			"u_application_file": file_sys_id,
+            "sys_id": file_sys_id,
+			"u_author": usr_sys_id,
+			"u_date": record.commit.author.date,
+			"u_comment": record.commit.message,
+			"u_sha": record.sha
+        });
+    }
+
+
+})(v_table, v_query);]]></script>
+        <sys_class_name>sys_script_vtable</sys_class_name>
+        <sys_created_by>daniel.draes</sys_created_by>
+        <sys_created_on>2021-10-04 16:42:37</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>5ac395bc1b433010ce0f62c3b24bcbce</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>GitHub Commit</sys_name>
+        <sys_package display_value="GitHub Spoke" source="sn_github_spoke">9a025c563b22330006f1600713efc4cf</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="GitHub Spoke">9a025c563b22330006f1600713efc4cf</sys_scope>
+        <sys_update_name>sys_script_vtable_5ac395bc1b433010ce0f62c3b24bcbce</sys_update_name>
+        <sys_updated_by>daniel.draes</sys_updated_by>
+        <sys_updated_on>2021-10-04 16:52:50</sys_updated_on>
+        <table>sn_github_spoke_st_github_commit</table>
+    </sys_script_vtable>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="GitHub Spoke">9a025c563b22330006f1600713efc4cf</claim_owner_scope>
+        <claim_timestamp>17c4c39a06d0000001</claim_timestamp>
+        <metadata_update_name>sys_script_vtable_5ac395bc1b433010ce0f62c3b24bcbce</metadata_update_name>
+        <previous_claim_app_version>2.0.3</previous_claim_app_version>
+        <previous_claim_name>GitHub Spoke</previous_claim_name>
+        <previous_claim_scope>9a025c563b22330006f1600713efc4cf</previous_claim_scope>
+        <sys_created_by>daniel.draes</sys_created_by>
+        <sys_created_on>2021-10-04 16:53:37</sys_created_on>
+        <sys_id>677615701b833010ce0f62c3b24bcbd6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>daniel.draes</sys_updated_by>
+        <sys_updated_on>2021-10-04 16:53:37</sys_updated_on>
+    </sys_claim>
+</record_update>
