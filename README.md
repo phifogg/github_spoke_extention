@@ -14,5 +14,5 @@ configuration record to display its version history in GitHub.
 # Disclaimer
 This app will bring in an customization to the GitHub Spoke delivered in baseline. If you have already a customization of that it might cause issues. 
 It is also not guaranteed this will work through all Publish / Deploy / Update Set mechanism. You are advised to use this repository as inspiration
-and test it our on a [developer instance]|(https://developer.servicenow.com). If you like it I do recommend you re-create the elements in your instance 
+and test it our on a [developer instance](https://developer.servicenow.com). If you like it I do recommend you re-create the elements in your instance 
 from scratch or at least do a thourough testing.
