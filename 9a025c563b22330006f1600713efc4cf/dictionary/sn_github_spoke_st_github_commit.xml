@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="GitHub Commit" max_length="40" name="sn_github_spoke_st_github_commit" type="collection">
+        <element label="Comment" max_length="200" name="u_comment" type="string"/>
+        <element label="Date" max_length="40" name="u_date" type="glide_date_time"/>
+        <element label="SHA" max_length="40" name="u_sha" type="string"/>
+        <element label="Author" max_length="32" name="u_author" reference="sys_user" type="reference"/>
+        <element label="Application File" max_length="32" name="u_application_file" reference="sys_metadata" type="reference"/>
+        <index name="index">
+            <element name="u_author"/>
+        </index>
+        <index name="index2">
+            <element name="u_application_file"/>
+        </index>
+    </element>
+</database>

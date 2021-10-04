@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_sha" label="SHA" language="en" table="sn_github_spoke_st_github_commit">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_sha</element>
+            <help/>
+            <hint/>
+            <label>SHA</label>
+            <language>en</language>
+            <name>sn_github_spoke_st_github_commit</name>
+            <plural>SHAs</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>daniel.draes</sys_created_by>
+            <sys_created_on>2021-10-04 16:38:09</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>89f2557c1b433010ce0f62c3b24bcbbc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>SHA</sys_name>
+            <sys_package display_value="GitHub Spoke" source="sn_github_spoke">9a025c563b22330006f1600713efc4cf</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="GitHub Spoke">9a025c563b22330006f1600713efc4cf</sys_scope>
+            <sys_update_name>sys_documentation_sn_github_spoke_st_github_commit_u_sha_en</sys_update_name>
+            <sys_updated_by>daniel.draes</sys_updated_by>
+            <sys_updated_on>2021-10-04 16:38:09</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="GitHub Spoke">9a025c563b22330006f1600713efc4cf</claim_owner_scope>
+        <claim_timestamp>17c4c2d07c20000001</claim_timestamp>
+        <metadata_update_name>sys_documentation_sn_github_spoke_st_github_commit_u_sha_en</metadata_update_name>
+        <previous_claim_app_version>2.0.3</previous_claim_app_version>
+        <previous_claim_name>GitHub Spoke</previous_claim_name>
+        <previous_claim_scope>9a025c563b22330006f1600713efc4cf</previous_claim_scope>
+        <sys_created_by>daniel.draes</sys_created_by>
+        <sys_created_on>2021-10-04 16:39:52</sys_created_on>
+        <sys_id>06531d7c1b433010ce0f62c3b24bcb88</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>daniel.draes</sys_updated_by>
+        <sys_updated_on>2021-10-04 16:39:52</sys_updated_on>
+    </sys_claim>
+</record_update>

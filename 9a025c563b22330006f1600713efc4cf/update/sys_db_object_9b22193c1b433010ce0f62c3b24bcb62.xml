@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_db_object">
+    <sys_db_object action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <actions_access>false</actions_access>
+        <alter_access>false</alter_access>
+        <caller_access/>
+        <client_scripts_access>false</client_scripts_access>
+        <configuration_access>false</configuration_access>
+        <create_access>false</create_access>
+        <create_access_controls>true</create_access_controls>
+        <delete_access>false</delete_access>
+        <extension_model/>
+        <is_extendable>false</is_extendable>
+        <label>GitHub Commit</label>
+        <live_feed_enabled>false</live_feed_enabled>
+        <name>sn_github_spoke_st_github_commit</name>
+        <number_ref/>
+        <provider_class/>
+        <read_access>true</read_access>
+        <scriptable_table>true</scriptable_table>
+        <super_class/>
+        <sys_class_code/>
+        <sys_class_name>sys_db_object</sys_class_name>
+        <sys_class_path/>
+        <sys_created_by>daniel.draes</sys_created_by>
+        <sys_created_on>2021-10-04 16:35:53</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9b22193c1b433010ce0f62c3b24bcb62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GitHub Commit</sys_name>
+        <sys_package display_value="GitHub Spoke" source="sn_github_spoke">9a025c563b22330006f1600713efc4cf</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="GitHub Spoke">9a025c563b22330006f1600713efc4cf</sys_scope>
+        <sys_update_name>sys_db_object_9b22193c1b433010ce0f62c3b24bcb62</sys_update_name>
+        <sys_updated_by>daniel.draes</sys_updated_by>
+        <sys_updated_on>2021-10-04 16:35:53</sys_updated_on>
+        <update_access>false</update_access>
+        <user_role display_value="sn_github_spoke.github_commit_user" name="sn_github_spoke.github_commit_user">3f62d93c1b433010ce0f62c3b24bcb6e</user_role>
+        <ws_access>true</ws_access>
+    </sys_db_object>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="GitHub Spoke">9a025c563b22330006f1600713efc4cf</claim_owner_scope>
+        <claim_timestamp>17c4c2d07f70000001</claim_timestamp>
+        <metadata_update_name>sys_db_object_9b22193c1b433010ce0f62c3b24bcb62</metadata_update_name>
+        <previous_claim_app_version>2.0.3</previous_claim_app_version>
+        <previous_claim_name>GitHub Spoke</previous_claim_name>
+        <previous_claim_scope>9a025c563b22330006f1600713efc4cf</previous_claim_scope>
+        <sys_created_by>daniel.draes</sys_created_by>
+        <sys_created_on>2021-10-04 16:39:52</sys_created_on>
+        <sys_id>82531d7c1b433010ce0f62c3b24bcb8f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>daniel.draes</sys_updated_by>
+        <sys_updated_on>2021-10-04 16:39:52</sys_updated_on>
+    </sys_claim>
+</record_update>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_customization">
+    <sys_app_customization action="INSERT_OR_UPDATE">
+        <sys_created_by>daniel.draes</sys_created_by>
+        <sys_created_on>2021-10-04 16:39:39</sys_created_on>
+        <sys_id>4743d97c1b433010ce0f62c3b24bcb7d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>daniel.draes</sys_updated_by>
+        <sys_updated_on>2021-10-04 16:39:39</sys_updated_on>
+        <vendor_app display_value="GitHub Spoke">9a025c563b22330006f1600713efc4cf</vendor_app>
+        <vendor_app_version>2.0.3</vendor_app_version>
+        <version>1.0.0</version>
+        <war_version>glide-rome-06-23-2021__patch1-hotfix1-09-15-2021_09-16-2021_1434.zip</war_version>
+    </sys_app_customization>
+</record_update>
