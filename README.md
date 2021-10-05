@@ -1,6 +1,9 @@
 # GitHub Spoke Extention
 Extention to the baseline GitHub Spoke functionality
 
+Link to ServiceNow Community for this project:
+[Extending the GitHub Spoke with more features](https://community.servicenow.com/community?id=community_blog&sys_id=4cd37c491b837c14c552c8031d4bcb0a)
+
 This extention currently packages the following new features:
 
 ## Create Tag Action
